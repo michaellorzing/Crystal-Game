@@ -6,7 +6,7 @@ var userTotal=0;
 var computerPick=0;
 var crys1=0;
 var crys2=0;
-var crys3=-0;
+var crys3=0;
 var crys4=0;
 
 //set what a new game looks like. assign values to each crystal and the computers selection randomly. assign values to the crystal via the id in their associated spans.
@@ -15,11 +15,6 @@ var crys4=0;
 function newGame() {
 
 userTotal=0;
-computerPick=0;
-crys1=0;
-crys2=0;
-crys3=-0;
-crys4=0;
 
 crys1= Math.floor(Math.random() * 12-1)+1;
 crys2= Math.floor(Math.random() * 12-1)+1;
