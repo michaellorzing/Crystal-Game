@@ -15,19 +15,25 @@ var crys4=0;
 function newGame() {
 
 userTotal=0;
+computerPick="";
+crys1="";
+crys2="";
+crys3="";
+crys4="";
 
-crys1= Math.floor(Math.random() * 12-1)+1;
-crys2= Math.floor(Math.random() * 12-1)+1;
-crys3= Math.floor(Math.random() * 12-1)+1;
-crys4= Math.floor(Math.random() * 12-1)+1;
+computerPick= Math.floor(Math.random() * (120-19)) + 19;
+$("#computerPick").text(computerPick);
+
+crys1= Math.floor(Math.random() * (12-1))+1;
+crys2= Math.floor(Math.random() * (12-1))+1;
+crys3= Math.floor(Math.random() * (12-1))+1;
+crys4= Math.floor(Math.random() * (12-1))+1;
 
 console.log(crys1);
 console.log(crys2);
 console.log(crys3);
 console.log(crys4);
 
-computerPick= Math.floor(Math.random() * 120-19) + 19;
-$("#computerPick").text(computerPick);
 }
 
 //add the values of each crystal when clicked and determine win conitions. alert when you win or lose. append the totals 
@@ -37,11 +43,15 @@ $("#crys1").click(function(){
   $("#userTotal").text(" " + userTotal);
   if(userTotal === computerPick){
     alert("You beat the wizard. Rad!")
-    $("#wins").append(wins++)
+    wins++;
+    parseInt(wins);
+    $("#wins").text(`Wins: ${wins}`);
     newGame()}
   else if(userTotal > computerPick) {
     alert("Lame! The wizard wins this time. Try again");
-    $("#losses").append(losses++)
+    losses++;
+    parseInt(losses);
+    $("#losses").text(`Losses: ${losses}`);
     newGame()}
   
 });
@@ -51,11 +61,15 @@ $("#crys2").click(function(){
   $("#userTotal").text(" " + userTotal);
   if(userTotal === computerPick){
     alert("You beat the wizard. Rad!")
-    $("#wins").append(wins++)
+    wins++;
+    parseInt(wins);
+    $("#wins").text(`Wins: ${wins}`);
     newGame()}
   else if(userTotal > computerPick) {
     alert("Lame! The wizard wins this time. Try again");
-    $("#losses").append(losses++)
+    losses++;
+    parseInt(losses);
+    $("#losses").text(`Losses: ${losses}`);
     newGame()}
 });
 
@@ -64,11 +78,15 @@ $("#crys3").click(function(){
   $("#userTotal").text(" " + userTotal);
   if(userTotal === computerPick){
     alert("You beat the wizard. Rad!")
-    $("#wins").append(wins++)
+    wins++;
+    parseInt(wins);
+    $("#wins").text(`Wins: ${wins}`);
     newGame()}
   else if(userTotal > computerPick) {
     alert("Lame! The wizard wins this time. Try again");
-    $("#losses").append(losses++)
+    losses++;
+    parseInt(losses);
+    $("#losses").text(`Losses: ${losses}`);
     newGame()}
 });
 
@@ -77,14 +95,18 @@ $("#crys4").click(function(){
   $("#userTotal").text(" " + userTotal);
   if(userTotal === computerPick){
     alert("You beat the wizard. Rad!")
-    $("#wins").append(wins++)
+    wins++;
+    parseInt(wins);
+    $("#wins").text(`Wins: ${wins}`);
     newGame()}
   else if(userTotal > computerPick) {
     alert("Lame! The wizard wins this time. Try again");
-    $("#losses").append(losses++)
+    losses++;
+    parseInt(losses);
+    $("#losses").text(`Losses: ${losses}`);
     newGame()}
 });
-
+//Win and loss totals start at zero. Fix that
 
 });
 
