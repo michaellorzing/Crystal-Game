@@ -3,40 +3,81 @@ $(document).ready(function()  {
 var wins=0;
 var losses=0;
 var userTotal=0;
-var crysVal=[0,0,0,0];
-
 var computerPick=0;
-var gameRunning=false;
+var crys1=0;
+var crys2=0;
+var crys3=-0;
+var crys4=0;
 
-var $computerPick= $("#computerPick");
-var $crys1=$("#crys1");
-var $crys2=$("#crys2");
-var $crys3=$("#crys3");
-var $crys4=$("#crys4");
-var $crystal=$(".crystal");
-var $wins=$("#wins");
-var $losses=$("#losses");
-var $userTotal=$("#userTotal");
-var $newGameBtn=$("#newGameBtn");
+//set what a new game looks like. assign values to each crystal and the computers selection randomly. assign values to the crystal via the id in their associated spans.
+$("#newGameBtn").on("click", newGame());
 
-function crysNumPick(){
-  return Math.floor(Math.random()*12);
-};
+function newGame() {
 
-function computerNumPick() {
-  return Math.floor(Math.random()*(120-19));
-};
+userTotal=0;
 
-function assignCrys(){
-  for(var i=0; i < crysVal.length; i++){
-    crysVal[i]=crysNumPick();
-  }
+crys1= Math.floor(Math.random() * 12)+1;
+crys2= Math.floor(Math.random() * 12)+1;
+crys3= Math.floor(Math.random() * 12)+1;
+crys4= Math.floor(Math.random() * 12)+1;
 
-  $crys1.val(crysVal[0]);
-  $crys2.val(crysVal[1]);
-  $crys3.val(crysVal[2]);
-  $crys4.val(crysVal[3]);
+console.log(crys1);
+console.log(crys2);
+console.log(crys3);
+console.log(crys4);
+
+computerPick= Math.floor(Math.random() * 120-19);
+$("#computerPick").text(computerPick);
 }
+
+//add the values of each crystal when clicked and determine win conitions
+
+$("#crys1").click(function(){
+  userTotal= userTotal + crys1;
+  $("#userTotal").text(" " + userTotal);
+  if(userTotal === computerPick){
+    alert("You beat the wizard. Rad!")
+  wins++}
+  else(userTotal > computerPick) {
+    alert("Lame! The wizard wins this time. Try again");
+  losses++}
+  
+});
+
+$("#crys2").click(function(){
+  userTotal= userTotal + crys2;
+  $("#userTotal").text(" " + userTotal);
+  if(userTotal === computerPick){
+    alert("You beat the wizard. Rad!")
+    wins++}
+  else(userTotal > computerPick) {
+    alert("Lame! The wizard wins this time. Try again");
+    losses++}
+});
+
+$("#crys3").click(function(){
+  userTotal= userTotal + crys3;
+  $("#userTotal").text(" " + userTotal);
+  if(userTotal === computerPick){
+    alert("You beat the wizard. Rad!")
+  wins++}
+  else(userTotal > computerPick) {
+    alert("Lame! The wizard wins this time. Try again");
+  losses++}
+});
+
+$("#crys4").click(function(){
+  userTotal= userTotal + crys4;
+  $("#userTotal").text(" " + userTotal);
+  if(userTotal === computerPick){
+    alert("You beat the wizard. Rad!")
+  wins++}
+  else(userTotal > computerPick) {
+    alert("Lame! The wizard wins this time. Try again");
+  losses++}
+});
+
+
 
 
 
