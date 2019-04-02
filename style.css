@@ -54,6 +54,10 @@ span  {
   background-color: #AC19FF;
 }
 
+.card-header{
+  font-size: 20px;
+}
+
 #newGameBtn {
   background: purple;
   margin-top: 25px;

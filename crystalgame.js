@@ -11,16 +11,22 @@ var crys4=0;
 
 //set what a new game looks like. assign values to each crystal and the computers selection randomly. assign values to the crystal via the id in their associated spans.
 
+//On clicking a crystal, it starts a new game.
+$(".crystal").on("click", newGame());
+
+
 
 function newGame() {
 
+$("#userTotal").empty();
 userTotal=0;
-computerPick="";
+computerPick=0;
 crys1="";
 crys2="";
 crys3="";
 crys4="";
 
+//run math functions to select random numbers for each min and max of the number range. Assign them to the console to be later pulled from
 computerPick= Math.floor(Math.random() * (120-19)) + 19;
 $("#computerPick").text(computerPick);
 
@@ -36,7 +42,7 @@ console.log(crys4);
 
 }
 
-//add the values of each crystal when clicked and determine win conitions. alert when you win or lose. append the totals 
+//add the values of each crystal when clicked and determine win conitions. alert when you win or lose. Add the totals to the designated id in the html. run the newGame function to revert to the original settings.
 
 $("#crys1").click(function(){
   userTotal= userTotal + crys1;
@@ -106,7 +112,7 @@ $("#crys4").click(function(){
     $("#losses").text(`Losses: ${losses}`);
     newGame()}
 });
-//Win and loss totals start at zero. Fix that
+
 
 });
 
