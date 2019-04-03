@@ -34,12 +34,6 @@ crys1= Math.floor(Math.random() * (12-1))+1;
 crys2= Math.floor(Math.random() * (12-1))+1;
 crys3= Math.floor(Math.random() * (12-1))+1;
 crys4= Math.floor(Math.random() * (12-1))+1;
-
-console.log(crys1);
-console.log(crys2);
-console.log(crys3);
-console.log(crys4);
-
 }
 
 //add the values of each crystal when clicked and determine win conitions. alert when you win or lose. Add the totals to the designated id in the html. run the newGame function to revert to the original settings.
