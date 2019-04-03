@@ -26,7 +26,7 @@ crys2="";
 crys3="";
 crys4="";
 
-//run math functions to select random numbers for each min and max of the number range. Assign them to the console to be later pulled from
+//run math functions to select random numbers for each min and max of the number range. 
 computerPick= Math.floor(Math.random() * (120-19)) + 19;
 $("#computerPick").text(computerPick);
 
